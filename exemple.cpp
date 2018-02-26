@@ -1,6 +1,6 @@
-#include <iostream>
+/* We test our library in this main function */
+
 #include "plot.h"
-#include <cmath>
 
 using namespace std;
 

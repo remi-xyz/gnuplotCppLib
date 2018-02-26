@@ -1,6 +1,3 @@
-#include <iostream>
-#include <stdio.h>
-#include <fstream>
 #include "plot.h"
 
 using namespace std;

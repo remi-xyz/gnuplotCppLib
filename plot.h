@@ -1,33 +1,53 @@
-#ifndef DEF_PLOT
-#define DEF_PLOT
+#ifndef DEF_PLOT // Why ?
+#define DEF_PLOT // Why ?
 
-#include <iostream>
-#include <fstream>
+#include "Includes.h"
 
 using namespace std;
 
 class plot{
-public:
-  //constructor
-  plot(string plot_file, string data_file);
-  plot(string plot_file, string data_file, string title, string xlabel,string ylabel);
+    public:
+        // Constructor
+        plot(string plot_file, string data_file);
+        plot(string plot_file, string data_file, string title, string xlabel,string ylabel);
 
-  //graph presentation
-  void addTitle(string title);
-  string showTitle() const;
-  void addXlabel(string xlabel);
-  string showXlabel() const;
-  void addYlabel(string ylabel);
-  string showYlabel() const;
+        // Functions to custom graphs
+        // Add a title to graph
+        void addTitle(string title);
 
-  //data
-  void addpoint(double x, double y) const;
+        // Function to print the graph title
+        string showTitle() const;
 
-  //plot graph
-  void plotGraph() const;
-private:
-  string m_data_file, m_plot_file, m_title, m_xlabel, m_ylabel;
+        // Give a label for x axis
+        void addXlabel(string xlabel);
 
+        // Function to print the x axis label
+        string showXlabel() const;
+
+        // Give a label for y axis
+        void addYlabel(string ylabel);
+
+        // Function to print the y axis label
+        string showYlabel() const;
+
+        // Function to add points on curve
+        void addpoint(double x, double y) const;
+
+        // Function to run datas on Gnuplot
+        void plotGraph() const;
+
+    private:
+        // What it is ?
+        string m_data_file, m_plot_file;
+
+        // Title of graph
+        string m_title;
+
+        // Label of x axis
+        string m_xlabel;
+
+        // Label of y axis
+        string m_ylabel;
 };
 
 #endif
