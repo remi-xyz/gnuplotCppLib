@@ -1,0 +1,5 @@
+=== On met dans ce fichier les choses à faire et/ou à améliorer dans la librairie ===
+
+- Créer une classe pour les graphs 2D et une pour les graphs 3D ?
+
+- Gérer les différents types d'interpolation
