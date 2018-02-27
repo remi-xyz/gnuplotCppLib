@@ -37,8 +37,11 @@ class plot{
         void plotGraph() const;
 
     private:
-        // What it is ?
-        string m_data_file, m_plot_file;
+        // The name of file which contains datas for graph
+        string m_data_file;
+        
+        // The name of file which will contain plotting graph
+        string m_plot_file;
 
         // Title of graph
         string m_title;
