@@ -1,5 +1,5 @@
-#ifndef DEF_PLOT // Why ?
-#define DEF_PLOT // Why ?
+#ifndef DEF_PLOT 
+#define DEF_PLOT 
 
 #include "Includes.h"
 
@@ -12,19 +12,19 @@ class plot{
         plot(string plot_file, string data_file, string title, string xlabel,string ylabel);
 
         // Functions to custom graphs
-        // Add a title to graph
+        // Change title to graph
         void addTitle(string title);
 
         // Function to print the graph title
         string showTitle() const;
 
-        // Give a label for x axis
+        // Change label for x axis
         void addXlabel(string xlabel);
 
         // Function to print the x axis label
         string showXlabel() const;
 
-        // Give a label for y axis
+        // Change label for y axis
         void addYlabel(string ylabel);
 
         // Function to print the y axis label
@@ -33,7 +33,7 @@ class plot{
         // Function to add points on curve
         void addpoint(double x, double y) const;
 
-        // Function to run datas on Gnuplot
+        // Function to run gnuplot and plot the graph
         void plotGraph() const;
 
     private:
