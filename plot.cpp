@@ -62,32 +62,32 @@ string plot::showYlabel() const{
 }
 
 // Definition of addpoint function
-void plot::addpoint(double x, double y) const{
-  // Need com !
+void plot::addpoint(double x, double y) const{ // Add a point in data file
+  // Initialisation of stream with data file
   ofstream dataStream(m_data_file, ios::app);
 
-  // Need com !
+  // Add the coordinates of the point with gnuplot syntax
   dataStream << x << " " << y << endl;
 }
 
 // Definition of plotGraph function
-void plot::plotGraph() const{
-  // Declaration and creation of gnuplot file to execute
+void plot::plotGraph() const{ // Run gnuplot and plot the graph
+  // Initialisation of stream with the command file
   ofstream cmdStream("cmd.plt");
+  // The command file is read by gnuplot, his contain all parameter of graph and the command to run the plot
 
-  // First command, we will create a svg file after execution
+  // Define the type of output file in .svg
   cmdStream << "set terminal svg" << endl;
 
-  // Second command, we indicate the name of outpout file
+  // Define the name of output file
   cmdStream << "set output \"" << m_plot_file <<"\"" << endl;
 
-  // We add title if we has a title
+  // Check if a title, x and y label are define by the user and add them on command file
   if (m_title!=""){
     // Scripting
     cmdStream << "set title \"" << m_title << "\"" << endl;
   }
 
-  // We add labels if we has labels
   if (m_xlabel!=""){
     // Scripting
     cmdStream << "set xlabel \"" << m_title << "\"" << endl;
@@ -98,7 +98,9 @@ void plot::plotGraph() const{
     cmdStream << "set ylabel \"" << m_ylabel << "\"" << endl;
   }
 
-  // We indicates in the command the data file
+  /*it's the command to plot the graph
+  for the moment the graph is ploted in line style (gnuplot use interpolation to create the point between the data)
+  use "pointlines" or nothing to change the plot style*/
   cmdStream << "plot \"" << m_data_file << "\" with lines" << endl;
 
   // Run gnuplot with wanted parameters

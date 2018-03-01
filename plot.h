@@ -1,5 +1,5 @@
-#ifndef DEF_PLOT // Why ?
-#define DEF_PLOT // Why ?
+#ifndef DEF_PLOT
+#define DEF_PLOT
 
 #include "Includes.h"
 
@@ -39,7 +39,7 @@ class plot{
     private:
         // The name of file which contains datas for graph
         string m_data_file;
-        
+
         // The name of file which will contain plotting graph
         string m_plot_file;
 
