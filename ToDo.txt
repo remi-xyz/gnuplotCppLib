@@ -3,3 +3,5 @@
 - Créer une classe pour les graphs 2D et une pour les graphs 3D ?
 
 - Gérer les différents types d'interpolation
+
+- Ouvrir le graph qui vient d'être créé immédiatement après l'appel de la fonction plotGraph
