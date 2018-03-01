@@ -3,7 +3,7 @@
 using namespace std;
 
 // Definition of first contructor
-plot::plot(string plot_file,string data_file){
+plot2D::plot2D(string plot_file,string data_file){
   // We has here the wanted name for final plot graph
   m_plot_file = plot_file;
 
@@ -17,7 +17,7 @@ plot::plot(string plot_file,string data_file){
 }
 
 // Definition of second constructor
-plot::plot(string plot_file, string data_file, string title, string xlabel, string ylabel){
+plot2D::plot2D(string plot_file, string data_file, string title, string xlabel, string ylabel){
   // He has here the wanted name for final plot graph
   m_plot_file=plot_file;
 
@@ -31,38 +31,38 @@ plot::plot(string plot_file, string data_file, string title, string xlabel, stri
 }
 
 // Definition of addTitle function
-void plot::addTitle(string title){
+void plot2D::addTitle(string title){
   // We enter in this function the wanted name for graph
   m_title=title;
 }
 
 // Definition of shwTitle function
-string plot::showTitle() const{
+string plot2D::showTitle() const{
   return m_title;
 }
 
 // Definition of add labels
-void plot::addXlabel(string xlabel){
+void plot2D::addXlabel(string xlabel){
   // We enter in this function the wanted name for xlabel
   m_xlabel=xlabel;
 }
 
-void plot::addYlabel(string ylabel){
+void plot2D::addYlabel(string ylabel){
   // We enter in this function the wanted name for ylabel
   m_ylabel=ylabel;
 }
 
 // Definition of show label functions
-string plot::showXlabel() const{
+string plot2D::showXlabel() const{
   return m_xlabel;
 }
 
-string plot::showYlabel() const{
+string plot2D::showYlabel() const{
   return m_ylabel;
 }
 
 // Definition of addpoint function
-void plot::addpoint(double x, double y) const{ // Add a point in data file
+void plot2D::addpoint(double x, double y) const{ // Add a point in data file
   // Initialisation of stream with data file
   ofstream dataStream(m_data_file, ios::app);
 
@@ -71,7 +71,7 @@ void plot::addpoint(double x, double y) const{ // Add a point in data file
 }
 
 // Definition of plotGraph function
-void plot::plotGraph() const{ // Run gnuplot and plot the graph
+void plot2D::plotGraph() const{ // Run gnuplot and plot the graph
   // Initialisation of stream with the command file
   ofstream cmdStream("cmd.plt");
   // The command file is read by gnuplot, his contain all parameter of graph and the command to run the plot

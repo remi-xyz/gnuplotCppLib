@@ -5,11 +5,12 @@
 
 using namespace std;
 
-class plot{
+// Class of graphs with 2 axis
+class plot2D{
     public:
-        // Constructor
-        plot(string plot_file, string data_file);
-        plot(string plot_file, string data_file, string title, string xlabel,string ylabel);
+        // Constructors
+        plot2D(string plot_file, string data_file);
+        plot2D(string plot_file, string data_file, string title, string xlabel,string ylabel);
 
         // Functions to custom graphs
         // Add a title to graph
@@ -51,6 +52,51 @@ class plot{
 
         // Label of y axis
         string m_ylabel;
+};
+
+// Class for graphs with 3 axis
+class plot3D
+{
+    public:
+        // Constructors
+        plot3D(string plot_file, string data_file);
+        plot3D(string plot_file, string data_file, string title, string xlabel,string ylabel);
+
+        // Functions to custom graphs
+        // Add a title to graph
+        void addTitle(string title);
+
+        // Function to print the graph title
+        string showTitle() const;
+
+        // Give a label for x axis
+        void addXlabel(string xlabel);
+
+        // Function to print the x axis label
+        string showXlabel() const;
+
+        // Give a label for y axis
+        void addYlabel(string ylabel);
+
+        // Function to print the y axis label
+        string showYlabel() const;
+
+        // Give a label for z axis
+        void addZlabel(string zlabel);
+
+        // Print the z axis label
+        string showZlabel();
+
+        // Function to add points on curve
+        void addpoint(double x, double y, double z) const;
+
+        // Function to run datas on Gnuplot
+        void plotGraph() const;
+
+    private:
+
+
+
 };
 
 #endif
