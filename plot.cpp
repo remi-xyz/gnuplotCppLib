@@ -105,4 +105,20 @@ void plot2D::plotGraph() const{ // Run gnuplot and plot the graph
 
   // Run gnuplot with wanted parameters
   popen("gnuplot cmd.plt", "r");
+
+  OpenPicture(m_plot_file);
+}
+
+// Definition of OpenPicture function
+void OpenPicture(string name)
+{
+    /* I have only lximage on my computer, this function has to upgrade */
+    // Creation of file for writing wanted bash command
+    ofstream pic("pic.sh");
+
+    // Scripting of command
+    pic << "lximage-qt " << name << endl;
+
+    // Run command
+    popen("bash pic.sh", "r");
 }

@@ -99,4 +99,7 @@ class plot3D
 
 };
 
+// Function to open easly a picture
+void OpenPicture(string name);
+
 #endif
