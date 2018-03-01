@@ -7,24 +7,24 @@ plot::plot(string plot_file,string data_file){
   // We has here the wanted name for final plot graph
   m_plot_file = plot_file;
 
-  // And the name of data file 
+  // And the name of data file
   m_data_file = data_file;
 
-  // Initialization of title and labels 
+  // Initialization of title and labels
   m_title="";
   m_xlabel="";
   m_ylabel="";
 }
 
-// Definition of second constructor 
+// Definition of second constructor
 plot::plot(string plot_file, string data_file, string title, string xlabel, string ylabel){
   // He has here the wanted name for final plot graph
   m_plot_file=plot_file;
 
-  // And the name of data file 
+  // And the name of data file
   m_data_file=data_file;
 
-  // And the title and labels of axis 
+  // And the title and labels of axis
   m_title=title;
   m_xlabel=xlabel;
   m_ylabel=ylabel;
@@ -72,34 +72,33 @@ void plot::addpoint(double x, double y) const{
 
 // Definition of plotGraph function
 void plot::plotGraph() const{
-  // Need com !
+  // Declaration and creation of gnuplot file to execute
   ofstream cmdStream("cmd.plt");
 
-  // Need com !
+  // First command, we will create a svg file after execution
   cmdStream << "set terminal svg" << endl;
 
-  // Need com !
+  // Second command, we indicate the name of outpout file
   cmdStream << "set output \"" << m_plot_file <<"\"" << endl;
 
-  // Need com !
+  // We add title if we has a title
   if (m_title!=""){
-    // Need com !
+    // Scripting
     cmdStream << "set title \"" << m_title << "\"" << endl;
   }
 
-  // Need com !
+  // We add labels if we has labels
   if (m_xlabel!=""){
-    // Need com !
+    // Scripting
     cmdStream << "set xlabel \"" << m_title << "\"" << endl;
   }
 
-  // Need com !
   if (m_ylabel!=""){
-    // Need com !
+    // Scritpting
     cmdStream << "set ylabel \"" << m_ylabel << "\"" << endl;
   }
 
-  // Need com !
+  // We indicates in the command the data file
   cmdStream << "plot \"" << m_data_file << "\" with lines" << endl;
 
   // Run gnuplot with wanted parameters
