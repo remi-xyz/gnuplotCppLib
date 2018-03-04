@@ -66,7 +66,7 @@ void plot2D::addpoint(double x, double y) const{ // Add a point in data file
   // Initialisation of stream with data file
   ofstream dataStream(m_data_file, ios::app);
 
-  // Add the coordinates of the point with gnuplot syntax
+  // Add the coordonates of the point with gnuplot syntax
   dataStream << x << " " << y << endl;
 }
 
@@ -121,4 +121,33 @@ void OpenPicture(string name)
 
     // Run command
     popen("bash pic.sh", "r");
+}
+
+// Definition of funtion showPlotFile
+string plot2D::showPlotFile()
+{
+    return m_plot_file;
+}
+
+// Definition of function showDataFile
+string plot2D::showDataFile()
+{
+    return m_data_file;
+}
+
+// Definition of function CubicSpines
+plot2D CubicSplines(plot2D Init_Plot, double e)
+{
+    // We create a extension to easily view files with interpolation
+    string Splines_extension = "-splines";
+
+    // Declaration of final plot
+    plot2D Final_Plot(Init_Plot.showPlotFile() + Splines_extension, Init_Plot.showDataFile() + Splines_extension);
+
+    // The new plot has same title and axis labels as the initial plot
+    Final_Plot.addTitle(Init_Plot.showTitle());
+    Final_Plot.addXlabel(Init_Plot.showXlabel());
+    Final_Plot.addYlabel(Init_Plot.showYlabel());
+
+
 }

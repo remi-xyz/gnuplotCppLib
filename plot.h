@@ -31,6 +31,12 @@ class plot2D{
         // Function to print the y axis label
         string showYlabel() const;
 
+        // Function to print the name of plot file
+        string showPlotFile();
+
+        // Function to print the name of data file
+        string showDataFile();
+
         // Function to add points on curve
         void addpoint(double x, double y) const;
 
@@ -101,5 +107,10 @@ class plot3D
 
 // Function to open easly a picture
 void OpenPicture(string name);
+
+// Function to create a plot with cubic splines interpolation based on another graph
+plot2D CubicSplines(plot2D Init_Plot, double e);
+
+
 
 #endif
