@@ -3,7 +3,7 @@
 // Basic
 #include <iostream>
 
-// Library for string type
+// Library to work easly with files
 #include <fstream>
 
 // Why ?
