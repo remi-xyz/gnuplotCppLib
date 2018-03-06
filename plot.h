@@ -108,9 +108,4 @@ class plot3D
 // Function to open easly a picture
 void OpenPicture(string name);
 
-// Function to create a plot with cubic splines interpolation based on another graph
-plot2D CubicSplines(plot2D Init_Plot, double e);
-
-
-
 #endif
