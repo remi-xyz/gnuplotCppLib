@@ -2,4 +2,6 @@
 
 - Créer une classe pour les graphs 2D et une pour les graphs 3D ?
 
-- Gérer les différents types d'interpolation
+- Créer une classe mère et faire hériter les graphs 2D et 3D de cette classe
+
+
