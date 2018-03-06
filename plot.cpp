@@ -134,20 +134,3 @@ string plot2D::showDataFile()
 {
     return m_data_file;
 }
-
-// Definition of function CubicSpines
-plot2D CubicSplines(plot2D Init_Plot, double e)
-{
-    // We create a extension to easily view files with interpolation
-    string Splines_extension = "-splines";
-
-    // Declaration of final plot
-    plot2D Final_Plot(Init_Plot.showPlotFile() + Splines_extension, Init_Plot.showDataFile() + Splines_extension);
-
-    // The new plot has same title and axis labels as the initial plot
-    Final_Plot.addTitle(Init_Plot.showTitle());
-    Final_Plot.addXlabel(Init_Plot.showXlabel());
-    Final_Plot.addYlabel(Init_Plot.showYlabel());
-
-
-}
