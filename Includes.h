@@ -6,7 +6,7 @@
 // Library to work easly with files
 #include <fstream>
 
-// Why ?
+// For popen command
 #include <stdio.h>
 
 // Math library for tests
